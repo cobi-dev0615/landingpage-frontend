@@ -13,5 +13,5 @@ export const WHATSAPP_CONFIG = {
   phoneNumber: import.meta.env.VITE_WHATSAPP_NUMBER || '5511999999999',
   
   // Mensagem padrão que será enviada
-  defaultMessage: 'Olá! Gostaria de saber mais sobre o projeto Beth Mirage.'
+  defaultMessage: 'Hello, I\'m on the landing page and I have a question about the platform.'
 }
