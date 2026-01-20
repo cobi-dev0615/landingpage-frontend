@@ -54,21 +54,24 @@
 }
 
 .chapters-row-second {
-  /* Calculate width: (100% - 2*gap - spacer) / 2 = same as card 1 width */
-  /* Card 1 width = (100% - 2*gap) / 3 */
-  /* So: (100% - 2*gap - spacer) / 2 = (100% - 2*gap) / 3 */
-  /* Solving: spacer = (100% - 2*gap) / 3 */
-  grid-template-columns: calc((100% - 2 * var(--spacing-md)) / 3) 100px calc((100% - 2 * var(--spacing-md)) / 3);
-  justify-content: center;
+  /* Card 4 on left, large spacer in middle, Card 5 on right */
+  /* Each card has same width as cards in first row: (100% - 2*gap) / 3 */
+  grid-template-columns: calc((100% - 2 * var(--spacing-md)) / 3) 1fr calc((100% - 2 * var(--spacing-md)) / 3);
+  justify-items: start;
+}
+
+.chapters-row-second .chapter-card:last-child {
+  justify-self: end;
 }
 
 .chapters-center-spacer {
-  /* Empty space in the middle */
+  /* Empty space in the middle - flexes to fill available space */
+  min-width: 0;
 }
 
 @media (min-width: 1200px) {
   .chapters-row-second {
-    grid-template-columns: calc((100% - 2 * var(--spacing-md)) / 3) 150px calc((100% - 2 * var(--spacing-md)) / 3);
+    grid-template-columns: calc((100% - 2 * var(--spacing-md)) / 3) 1fr calc((100% - 2 * var(--spacing-md)) / 3);
   }
 }
 
