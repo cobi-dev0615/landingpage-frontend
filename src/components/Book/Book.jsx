@@ -46,7 +46,8 @@ const Book = () => {
         <div className="chapters-container">
           <h3 className="chapters-title">Capítulos</h3>
           <div className="chapters-layout">
-            <div className="chapters-left">
+            {/* First row: Chapters 1, 2, 3 */}
+            <div className="chapters-row chapters-row-first">
               {chapters.slice(0, 3).map((chapter) => (
                 <ChapterCard 
                   key={chapter.number} 
@@ -55,15 +56,17 @@ const Book = () => {
                 />
               ))}
             </div>
-            <div className="chapters-center-spacer"></div>
-            <div className="chapters-right">
-              {chapters.slice(3).map((chapter) => (
-                <ChapterCard 
-                  key={chapter.number} 
-                  chapter={chapter}
-                  image={chapter.number === 4 ? '/images/chapter4.jpeg' : chapter.number === 5 ? '/images/chapter5.jpeg' : null}
-                />
-              ))}
+            {/* Second row: Chapter 4, spacer, Chapter 5 */}
+            <div className="chapters-row chapters-row-second">
+              <ChapterCard 
+                chapter={chapters[3]}
+                image="/images/chapter4.jpeg"
+              />
+              <div className="chapters-center-spacer"></div>
+              <ChapterCard 
+                chapter={chapters[4]}
+                image="/images/chapter5.jpeg"
+              />
             </div>
           </div>
         </div>
