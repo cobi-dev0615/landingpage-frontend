@@ -54,7 +54,12 @@
 }
 
 .chapters-row-second {
-  grid-template-columns: 1fr 100px 1fr;
+  /* Calculate width: (100% - 2*gap - spacer) / 2 = same as card 1 width */
+  /* Card 1 width = (100% - 2*gap) / 3 */
+  /* So: (100% - 2*gap - spacer) / 2 = (100% - 2*gap) / 3 */
+  /* Solving: spacer = (100% - 2*gap) / 3 */
+  grid-template-columns: calc((100% - 2 * var(--spacing-md)) / 3) 100px calc((100% - 2 * var(--spacing-md)) / 3);
+  justify-content: center;
 }
 
 .chapters-center-spacer {
@@ -63,7 +68,7 @@
 
 @media (min-width: 1200px) {
   .chapters-row-second {
-    grid-template-columns: 1fr 150px 1fr;
+    grid-template-columns: calc((100% - 2 * var(--spacing-md)) / 3) 150px calc((100% - 2 * var(--spacing-md)) / 3);
   }
 }
 
