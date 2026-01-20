@@ -20,11 +20,15 @@ const Hero = () => {
         <div className="hero-content">
           <h1 className="hero-title">ELA NÃO mata de uma vez.</h1>
           <p className="hero-subtext">
-            Descubra a história de Beth Mirage e como o vício em apostas destrói vidas e famílias.
+            Mas quando você percebe....já perdeu tudo.<br />
+            Conheça a História de Beth Mirage
           </p>
           <button className="btn hero-cta" onClick={handleCTAClick}>
             Quero baixar o ebook agora
           </button>
+          <p className="hero-features">
+            Acesso imediato * PDF * Leitura forte e real
+          </p>
         </div>
       </div>
       {isModalOpen && <EmailModal onClose={handleCloseModal} />}

@@ -45,14 +45,26 @@ const Book = () => {
         
         <div className="chapters-container">
           <h3 className="chapters-title">Capítulos</h3>
-          <div className="chapters-grid">
-            {chapters.map((chapter) => (
-              <ChapterCard 
-                key={chapter.number} 
-                chapter={chapter}
-                image={chapter.number === 4 ? '/images/chapter4.jpeg' : chapter.number === 5 ? '/images/chapter5.jpeg' : null}
-              />
-            ))}
+          <div className="chapters-layout">
+            <div className="chapters-left">
+              {chapters.slice(0, 3).map((chapter) => (
+                <ChapterCard 
+                  key={chapter.number} 
+                  chapter={chapter}
+                  image={null}
+                />
+              ))}
+            </div>
+            <div className="chapters-center-spacer"></div>
+            <div className="chapters-right">
+              {chapters.slice(3).map((chapter) => (
+                <ChapterCard 
+                  key={chapter.number} 
+                  chapter={chapter}
+                  image={chapter.number === 4 ? '/images/chapter4.jpeg' : chapter.number === 5 ? '/images/chapter5.jpeg' : null}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
